@@ -132,3 +132,34 @@ void viewClubs() {
     // List available clubs and their capacities
 }
 
+void viewSports() {
+    cout << "Available Sports:" << endl;
+    // List available sports and their capacities
+}
+
+void viewGroupedStudents() {
+    cout << "Viewing Grouped Students:" << endl;
+    // Group students by activity and group, and display
+}
+
+void saveToFile(const vector<student>& students) {
+    ofstream outFile("students.csv");
+    if (!outFile) {
+        cerr << "Error opening file." << endl;
+        return;
+    }
+
+    // Write student data to CSV file
+    outFile << "First Name,Surname,Gender,Age,BBiT Group,Sport,Clubs/Societies" << endl;
+    for (const auto &student: students) {
+        outFile << student.firstname << "," << student.surname << "," << student.gender << "," << student.age << ","
+                << student.group << "," << student.sport << ",";
+        for (const auto &club: student.clubs) {
+            outFile << club << " ";
+        }
+        outFile << endl;
+    }
+
+    outFile.close();
+    cout << "Data saved to students.csv" << endl;
+}
