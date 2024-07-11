@@ -64,3 +64,35 @@ int main() {
             default:
                 cout << "Invalid choice. Please try again." << endl;
         }
+} while (choice != 7);
+
+    return 0;
+}
+
+
+void addStudent(vector<student>& students) {
+    student newStudent;
+    cout << "Enter student's first name: ";
+    cin >> newStudent.firstname;
+    cout << "Enter student's surname: ";
+    cin >> newStudent.surname;
+    cout << "Enter student's gender (M / F): ";
+    cin >> newStudent.gender;
+    // Check if the input is valid
+    if (newStudent.gender == 'M' || newStudent.gender == 'F') {
+        cout << "Valid gender entered: " << newStudent.gender << endl;
+    } else {
+        cout << "Invalid gender entered. Please enter M or F." << endl;
+    }
+    cout << "Enter student's age: ";
+    cin >> newStudent.age;
+    cout << "Enter student's BBiT group (Choose 1, 2 or 3): ";
+    cin >> newStudent.group;
+
+    // Activity selection
+    cout << "Select student's sport (Sports available are Rugby, Athletics, Swimming, Soccer. If no sport. type 'None'): ";
+    cin.ignore(); // Ignore newline character
+    getline(cin, newStudent.sport);
+    if (newStudent.sport != "None") {
+    }
+    if (newStudent.sport == "None") {
