@@ -31,3 +31,36 @@ int main() {
     do {
         cout << "1. Add Student" << endl;
         cout << "2. View Students" << endl;
+        cout << "3. View Clubs/Societies" << endl;
+        cout << "4. View Sports" << endl;
+        cout << "5. View Grouped Students" << endl;
+        cout << "6. Save all Files" << endl;
+        cout << "7. Exit" << endl;
+        cout << "Enter your choice: ";
+        cin >> choice;
+// The switch statement allowing the program to execute different blocks of code based on the choice
+        switch (choice) {
+            case 1:
+                addStudent(students);
+                break;
+            case 2:
+                viewStudents(students);
+                break;
+            case 3:
+                viewClubs();
+                break;
+            case 4:
+                viewSports();
+                break;
+            case 5:
+                viewGroupedStudents();
+                break;
+            case 6:
+                saveToFile(students);
+                break;
+            case 7:
+                cout << "Exiting program." << endl;
+                break;
+            default:
+                cout << "Invalid choice. Please try again." << endl;
+        }
